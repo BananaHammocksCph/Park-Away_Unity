@@ -1,0 +1,10 @@
+E:\UnityPackages\Unity3D.Amqp\lib\rabbitmq-dotnet-client-rabbitmq_v3_4_4\projects\examples\client\ExceptionTest\build\bin\ExceptionTest.exe
+E:\UnityPackages\Unity3D.Amqp\lib\rabbitmq-dotnet-client-rabbitmq_v3_4_4\projects\examples\client\ExceptionTest\build\bin\ExceptionTest.pdb
+E:\UnityPackages\Unity3D.Amqp\lib\rabbitmq-dotnet-client-rabbitmq_v3_4_4\projects\examples\client\ExceptionTest\build\bin\RabbitMQ.Client.dll
+E:\UnityPackages\Unity3D.Amqp\lib\rabbitmq-dotnet-client-rabbitmq_v3_4_4\projects\examples\client\ExceptionTest\build\bin\RabbitMQ.Client.pdb
+E:\UnityPackages\Unity3D.Amqp\lib\rabbitmq-dotnet-client-rabbitmq_v3_4_4\projects\examples\client\ExceptionTest\build\bin\RabbitMQ.Client.xml
+E:\UnityPackages\Unity3D.Amqp\lib\rabbitmq-dotnet-client-rabbitmq_v3_4_4\projects\examples\client\ExceptionTest\obj\Debug\RabbitMQ.Client.Examples.ExceptionTest.csprojAssemblyReference.cache
+E:\UnityPackages\Unity3D.Amqp\lib\rabbitmq-dotnet-client-rabbitmq_v3_4_4\projects\examples\client\ExceptionTest\obj\Debug\RabbitMQ.Client.Examples.ExceptionTest.csproj.CoreCompileInputs.cache
+E:\UnityPackages\Unity3D.Amqp\lib\rabbitmq-dotnet-client-rabbitmq_v3_4_4\projects\examples\client\ExceptionTest\obj\Debug\RabbitMQ.Client.Examples.ExceptionTest.csproj.CopyComplete
+E:\UnityPackages\Unity3D.Amqp\lib\rabbitmq-dotnet-client-rabbitmq_v3_4_4\projects\examples\client\ExceptionTest\obj\Debug\ExceptionTest.exe
+E:\UnityPackages\Unity3D.Amqp\lib\rabbitmq-dotnet-client-rabbitmq_v3_4_4\projects\examples\client\ExceptionTest\obj\Debug\ExceptionTest.pdb

@@ -1,0 +1,11 @@
+E:\UnityPackages\Unity3D.Amqp\lib\rabbitmq-dotnet-client-rabbitmq_v3_4_4\projects\wcf\RabbitMQ.ServiceModel\build\bin\RabbitMQ.ServiceModel.xml
+E:\UnityPackages\Unity3D.Amqp\lib\rabbitmq-dotnet-client-rabbitmq_v3_4_4\projects\wcf\RabbitMQ.ServiceModel\build\bin\RabbitMQ.ServiceModel.dll
+E:\UnityPackages\Unity3D.Amqp\lib\rabbitmq-dotnet-client-rabbitmq_v3_4_4\projects\wcf\RabbitMQ.ServiceModel\build\bin\RabbitMQ.ServiceModel.pdb
+E:\UnityPackages\Unity3D.Amqp\lib\rabbitmq-dotnet-client-rabbitmq_v3_4_4\projects\wcf\RabbitMQ.ServiceModel\build\bin\RabbitMQ.Client.dll
+E:\UnityPackages\Unity3D.Amqp\lib\rabbitmq-dotnet-client-rabbitmq_v3_4_4\projects\wcf\RabbitMQ.ServiceModel\build\bin\RabbitMQ.Client.pdb
+E:\UnityPackages\Unity3D.Amqp\lib\rabbitmq-dotnet-client-rabbitmq_v3_4_4\projects\wcf\RabbitMQ.ServiceModel\build\bin\RabbitMQ.Client.xml
+E:\UnityPackages\Unity3D.Amqp\lib\rabbitmq-dotnet-client-rabbitmq_v3_4_4\projects\wcf\RabbitMQ.ServiceModel\obj\Debug\RabbitMQ.ServiceModel.csprojAssemblyReference.cache
+E:\UnityPackages\Unity3D.Amqp\lib\rabbitmq-dotnet-client-rabbitmq_v3_4_4\projects\wcf\RabbitMQ.ServiceModel\obj\Debug\RabbitMQ.ServiceModel.csproj.CoreCompileInputs.cache
+E:\UnityPackages\Unity3D.Amqp\lib\rabbitmq-dotnet-client-rabbitmq_v3_4_4\projects\wcf\RabbitMQ.ServiceModel\obj\Debug\RabbitMQ.ServiceModel.csproj.CopyComplete
+E:\UnityPackages\Unity3D.Amqp\lib\rabbitmq-dotnet-client-rabbitmq_v3_4_4\projects\wcf\RabbitMQ.ServiceModel\obj\Debug\RabbitMQ.ServiceModel.dll
+E:\UnityPackages\Unity3D.Amqp\lib\rabbitmq-dotnet-client-rabbitmq_v3_4_4\projects\wcf\RabbitMQ.ServiceModel\obj\Debug\RabbitMQ.ServiceModel.pdb

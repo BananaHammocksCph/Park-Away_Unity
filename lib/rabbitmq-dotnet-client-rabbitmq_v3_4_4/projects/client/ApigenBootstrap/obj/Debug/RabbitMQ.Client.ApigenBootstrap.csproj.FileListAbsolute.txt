@@ -1,0 +1,6 @@
+E:\UnityPackages\Unity3D.Amqp\lib\rabbitmq-dotnet-client-rabbitmq_v3_4_4\projects\client\ApigenBootstrap\build\bin\apigen-bootstrap.dll
+E:\UnityPackages\Unity3D.Amqp\lib\rabbitmq-dotnet-client-rabbitmq_v3_4_4\projects\client\ApigenBootstrap\build\bin\apigen-bootstrap.pdb
+E:\UnityPackages\Unity3D.Amqp\lib\rabbitmq-dotnet-client-rabbitmq_v3_4_4\projects\client\ApigenBootstrap\obj\Debug\RabbitMQ.Client.ApigenBootstrap.csprojAssemblyReference.cache
+E:\UnityPackages\Unity3D.Amqp\lib\rabbitmq-dotnet-client-rabbitmq_v3_4_4\projects\client\ApigenBootstrap\obj\Debug\RabbitMQ.Client.ApigenBootstrap.csproj.CoreCompileInputs.cache
+E:\UnityPackages\Unity3D.Amqp\lib\rabbitmq-dotnet-client-rabbitmq_v3_4_4\projects\client\ApigenBootstrap\obj\Debug\apigen-bootstrap.dll
+E:\UnityPackages\Unity3D.Amqp\lib\rabbitmq-dotnet-client-rabbitmq_v3_4_4\projects\client\ApigenBootstrap\obj\Debug\apigen-bootstrap.pdb

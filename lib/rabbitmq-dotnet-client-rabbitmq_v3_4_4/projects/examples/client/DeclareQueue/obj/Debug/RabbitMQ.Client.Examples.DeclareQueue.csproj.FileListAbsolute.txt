@@ -1,0 +1,10 @@
+E:\UnityPackages\Unity3D.Amqp\lib\rabbitmq-dotnet-client-rabbitmq_v3_4_4\projects\examples\client\DeclareQueue\build\bin\DeclareQueue.exe
+E:\UnityPackages\Unity3D.Amqp\lib\rabbitmq-dotnet-client-rabbitmq_v3_4_4\projects\examples\client\DeclareQueue\build\bin\DeclareQueue.pdb
+E:\UnityPackages\Unity3D.Amqp\lib\rabbitmq-dotnet-client-rabbitmq_v3_4_4\projects\examples\client\DeclareQueue\build\bin\RabbitMQ.Client.dll
+E:\UnityPackages\Unity3D.Amqp\lib\rabbitmq-dotnet-client-rabbitmq_v3_4_4\projects\examples\client\DeclareQueue\build\bin\RabbitMQ.Client.pdb
+E:\UnityPackages\Unity3D.Amqp\lib\rabbitmq-dotnet-client-rabbitmq_v3_4_4\projects\examples\client\DeclareQueue\build\bin\RabbitMQ.Client.xml
+E:\UnityPackages\Unity3D.Amqp\lib\rabbitmq-dotnet-client-rabbitmq_v3_4_4\projects\examples\client\DeclareQueue\obj\Debug\RabbitMQ.Client.Examples.DeclareQueue.csprojAssemblyReference.cache
+E:\UnityPackages\Unity3D.Amqp\lib\rabbitmq-dotnet-client-rabbitmq_v3_4_4\projects\examples\client\DeclareQueue\obj\Debug\RabbitMQ.Client.Examples.DeclareQueue.csproj.CoreCompileInputs.cache
+E:\UnityPackages\Unity3D.Amqp\lib\rabbitmq-dotnet-client-rabbitmq_v3_4_4\projects\examples\client\DeclareQueue\obj\Debug\RabbitMQ.Client.Examples.DeclareQueue.csproj.CopyComplete
+E:\UnityPackages\Unity3D.Amqp\lib\rabbitmq-dotnet-client-rabbitmq_v3_4_4\projects\examples\client\DeclareQueue\obj\Debug\DeclareQueue.exe
+E:\UnityPackages\Unity3D.Amqp\lib\rabbitmq-dotnet-client-rabbitmq_v3_4_4\projects\examples\client\DeclareQueue\obj\Debug\DeclareQueue.pdb

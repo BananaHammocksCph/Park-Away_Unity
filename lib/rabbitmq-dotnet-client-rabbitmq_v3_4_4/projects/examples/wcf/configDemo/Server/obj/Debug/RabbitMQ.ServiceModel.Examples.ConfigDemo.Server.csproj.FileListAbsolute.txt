@@ -1,0 +1,16 @@
+E:\UnityPackages\Unity3D.Amqp\lib\rabbitmq-dotnet-client-rabbitmq_v3_4_4\projects\examples\wcf\configDemo\Server\build\bin\Server.exe.config
+E:\UnityPackages\Unity3D.Amqp\lib\rabbitmq-dotnet-client-rabbitmq_v3_4_4\projects\examples\wcf\configDemo\Server\build\bin\Server.exe
+E:\UnityPackages\Unity3D.Amqp\lib\rabbitmq-dotnet-client-rabbitmq_v3_4_4\projects\examples\wcf\configDemo\Server\build\bin\Server.pdb
+E:\UnityPackages\Unity3D.Amqp\lib\rabbitmq-dotnet-client-rabbitmq_v3_4_4\projects\examples\wcf\configDemo\Server\build\bin\RabbitMQ.ServiceModel.dll
+E:\UnityPackages\Unity3D.Amqp\lib\rabbitmq-dotnet-client-rabbitmq_v3_4_4\projects\examples\wcf\configDemo\Server\build\bin\WcfServiceLibrary1.dll
+E:\UnityPackages\Unity3D.Amqp\lib\rabbitmq-dotnet-client-rabbitmq_v3_4_4\projects\examples\wcf\configDemo\Server\build\bin\RabbitMQ.Client.dll
+E:\UnityPackages\Unity3D.Amqp\lib\rabbitmq-dotnet-client-rabbitmq_v3_4_4\projects\examples\wcf\configDemo\Server\build\bin\RabbitMQ.ServiceModel.pdb
+E:\UnityPackages\Unity3D.Amqp\lib\rabbitmq-dotnet-client-rabbitmq_v3_4_4\projects\examples\wcf\configDemo\Server\build\bin\RabbitMQ.ServiceModel.xml
+E:\UnityPackages\Unity3D.Amqp\lib\rabbitmq-dotnet-client-rabbitmq_v3_4_4\projects\examples\wcf\configDemo\Server\build\bin\WcfServiceLibrary1.pdb
+E:\UnityPackages\Unity3D.Amqp\lib\rabbitmq-dotnet-client-rabbitmq_v3_4_4\projects\examples\wcf\configDemo\Server\build\bin\RabbitMQ.Client.pdb
+E:\UnityPackages\Unity3D.Amqp\lib\rabbitmq-dotnet-client-rabbitmq_v3_4_4\projects\examples\wcf\configDemo\Server\build\bin\RabbitMQ.Client.xml
+E:\UnityPackages\Unity3D.Amqp\lib\rabbitmq-dotnet-client-rabbitmq_v3_4_4\projects\examples\wcf\configDemo\Server\obj\Debug\RabbitMQ.ServiceModel.Examples.ConfigDemo.Server.csprojAssemblyReference.cache
+E:\UnityPackages\Unity3D.Amqp\lib\rabbitmq-dotnet-client-rabbitmq_v3_4_4\projects\examples\wcf\configDemo\Server\obj\Debug\RabbitMQ.ServiceModel.Examples.ConfigDemo.Server.csproj.CoreCompileInputs.cache
+E:\UnityPackages\Unity3D.Amqp\lib\rabbitmq-dotnet-client-rabbitmq_v3_4_4\projects\examples\wcf\configDemo\Server\obj\Debug\RabbitMQ.ServiceModel.Examples.ConfigDemo.Server.csproj.CopyComplete
+E:\UnityPackages\Unity3D.Amqp\lib\rabbitmq-dotnet-client-rabbitmq_v3_4_4\projects\examples\wcf\configDemo\Server\obj\Debug\Server.exe
+E:\UnityPackages\Unity3D.Amqp\lib\rabbitmq-dotnet-client-rabbitmq_v3_4_4\projects\examples\wcf\configDemo\Server\obj\Debug\Server.pdb
