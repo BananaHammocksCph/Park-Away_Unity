@@ -8,39 +8,59 @@ using UnityEngine.UI;
 
 public class PublishHelper : MonoBehaviour
 {
+    [Header("Exchanges")]
     [SerializeField] private string _exchangeName, _routingKey;
     public AmqpExchangeTypes ExchangeType = AmqpExchangeTypes.Direct;
+  
+    [Header("Queue Subscriptions")]
+    public UnityAmqpQueueSubscription[] QueueSubscriptions;
+    List<AmqpQueueSubscription> queueSubscriptions;
 
     [SerializeField] private CameraController _cameraController;
+
+    private LocationHandler _locationHandler;
+
     public RawImage userImage;
 
     private User _user;
 
     private string _jsonString;
 
+    private void Awake()
+    {
+        queueSubscriptions = new List<AmqpQueueSubscription>();
+
+        if (QueueSubscriptions != null && QueueSubscriptions.Length > 0)
+        {
+            queueSubscriptions.AddRange(QueueSubscriptions);
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
     {
-        var subscription = new AmqpExchangeSubscription(_exchangeName, ExchangeType, _routingKey, HandleExchangeMessageReceived);
-        AmqpClient.Subscribe(subscription);
+        //var subscription = new AmqpExchangeSubscription(_exchangeName, ExchangeType, _routingKey, HandleExchangeMessageReceived);
+        //AmqpClient.Subscribe(subscription);
+    
+
+        _locationHandler = FindObjectOfType<LocationHandler>();
 
         _user = new User();
         if (_cameraController == null)
             _cameraController = FindObjectOfType<CameraController>();
     }
 
-    private void HandleExchangeMessageReceived(AmqpExchangeReceivedMessage received)
-    {
-        var receivedJson = System.Text.Encoding.UTF8.GetString(received.Message.Body);
-        DeserializeUser(receivedJson);
-    }
+    //private void HandleExchangeMessageReceived(AmqpExchangeReceivedMessage received)
+    //{
+    //    var receivedJson = System.Text.Encoding.UTF8.GetString(received.Message.Body);
+    //    DeserializeUser(receivedJson);
+    //}
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("p"))
-            Publish();
+   //     if (Input.GetKeyDown("p"))
+           // Publish();
 
         if (Input.GetKeyDown("r"))
             DeserializeUser(_jsonString);
@@ -68,42 +88,68 @@ public class PublishHelper : MonoBehaviour
         int width = Screen.width;
         int height = Screen.height;
 
-        _user = JsonUtility.FromJson<User>(json);
+        User user = new User();
+        user = JsonUtility.FromJson<User>(json);
 
-        Texture2D texture = new Texture2D(width, height);
-        texture.LoadImage(_user.image);
-        userImage.texture = texture;
+        Debug.Log(user.id);
+        Debug.Log(user.coordinates.latitude);
+
+        //Texture2D texture = new Texture2D(width, height);
+        //texture.LoadImage(_user.image);
+        //userImage.texture = texture;
     }
 
 
     public void SerializeUser()
     {
-        _user = new User
+        User user = new User
         {
-            id = "Test",
+            id = Guid.NewGuid().ToString(),
             coordinates = new Coordinates
             {
-                latitude = 12.090,
-                longitude = 55.665
+                latitude = _locationHandler.Latitude,
+                longitude = _locationHandler.Longitude
             },
             image = _cameraController.Screenshot
         };
 
+        Debug.Log(user.id);
+        Debug.Log(user.coordinates.latitude);
         //File.WriteAllBytes(Application.dataPath + "/TestImage", GetImage());
 
-        using (StreamWriter stream = new StreamWriter(Application.dataPath + "/TestJson.json"))
-        {
-            string json = JsonUtility.ToJson(_user, true);
-            _jsonString = json;
-            stream.Write(json);
-        }
+        //using (StreamWriter stream = new StreamWriter(Application.dataPath + "/TestJson.json"))
+        //{
+        //    string json = JsonUtility.ToJson(_user, true);
+        //    _jsonString = json;
+        //    stream.Write(json);
+        //}
+
+        Publish(user);
+    }
+
+    public void QueueMessage(AmqpQueueSubscription subscription, IAmqpReceivedMessage msg)
+    {
+        
+        string inHuman = System.Text.Encoding.UTF8.GetString(msg.Body, 0, msg.Body.Length);
+        DeserializeUser(inHuman);
+        
+        Debug.Log(msg.Properties.CorrelationId);
     }
 
 
-    public void Publish()
+    private IAmqpMessageProperties GetProperties()
     {
-        var msg = JsonUtility.ToJson(_user);
+        MessageProperties properties = new MessageProperties("utf-8", "application/json", "CORRID");
+        return properties;
+    }
+
+    public void Publish(User user)
+    {
+        var msg = JsonUtility.ToJson(user);
+
+        string g = Guid.NewGuid().ToString();
 
         AmqpClient.Publish(_exchangeName, _routingKey, msg);
     }
-}
+
+} 

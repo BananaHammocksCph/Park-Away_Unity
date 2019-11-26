@@ -1,15 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class CameraController : MonoBehaviour
 {
     public RawImage cameraDisplayImage, confirmCaptureImage;
-    public GameObject confirmCapPanel;
+    public GameObject mainPanel, capturePanel, confirmCapPanel;
     int width = Screen.width;
     int height = Screen.height;
     private byte[] _screenshot;
+    string _path;
 
 
     #region Properties
@@ -27,6 +29,7 @@ public class CameraController : MonoBehaviour
     void Start()
     {
         cameraDisplayImage.gameObject.SetActive(false);
+        _path = Path.Combine( Application.persistentDataPath , "screenshot");
     }
 
     // Update is called once per frame
@@ -39,7 +42,8 @@ public class CameraController : MonoBehaviour
     {
         WebCamTexture webCamTexture = new WebCamTexture(width, height);
 
-        cameraDisplayImage.gameObject.SetActive(true);
+        capturePanel.SetActive(true);
+        mainPanel.SetActive(false);
         cameraDisplayImage.material.mainTexture = webCamTexture;
         webCamTexture.Play();
     }
@@ -59,25 +63,49 @@ public class CameraController : MonoBehaviour
 
     private void CaptureScreenshot()
     {
-        byte[] imageArray;
+        if (File.Exists(_path))
+        {
+            File.Delete(_path);
+        }
 
-        Texture2D tex = new Texture2D(width, height, TextureFormat.RGB24, false);
-        tex.ReadPixels(new Rect(0, 0, width, height), 0, 0);
-        tex.Apply();
-
-        imageArray = tex.EncodeToPNG();
+        ScreenCapture.CaptureScreenshot( _path);
 
 
-        Destroy(tex);
-        Screenshot = imageArray;
+        StartCoroutine(CheckSS());
+    }
 
-        cameraDisplayImage.gameObject.SetActive(false);
+    IEnumerator CheckSS()
+    {
+        yield return new WaitUntil(() => File.Exists(_path));
+        Screenshot = File.ReadAllBytes(_path);
+
+        capturePanel.SetActive(false);
         confirmCapPanel.SetActive(true);
         Texture2D texture = new Texture2D(width, height);
         texture.LoadImage(Screenshot);
+        confirmCaptureImage.texture = texture;
+    }
+ 
+    public void OnAcceptButton()
+    {
+        PublishHelper _publishHelper = FindObjectOfType<PublishHelper>();
+
+        _publishHelper.SerializeUser();
+
+        mainPanel.SetActive(true);
+        confirmCapPanel.SetActive(false);
     }
 
 
+    public void OnDeclineButton()
+    {
+        capturePanel.SetActive(true);
+        foreach (Transform t in cameraDisplayImage.transform)
+        {
+            t.gameObject.SetActive(true);
+        }
 
+        confirmCapPanel.SetActive(false);
+    }
 
 }
