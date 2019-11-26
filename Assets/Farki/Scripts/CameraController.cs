@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class CameraController : MonoBehaviour
 {
-    public Image cameraDisplayImage, confirmCaptureImage;
+    public RawImage cameraDisplayImage, confirmCaptureImage;
     public GameObject confirmCapPanel;
     private byte[] _screenshot;
 
@@ -53,12 +53,6 @@ public class CameraController : MonoBehaviour
 
         // Capture
         CaptureScreenshot();
-
-        confirmCapPanel.SetActive(true);
-        int width = Screen.width;
-        int height = Screen.height;
-        Texture2D texture = new Texture2D(width, height);
-        texture.LoadImage(Screenshot);
     }
 
     private void CaptureScreenshot()
@@ -76,6 +70,11 @@ public class CameraController : MonoBehaviour
 
         Destroy(tex);
         Screenshot = imageArray;
+
+        cameraDisplayImage.gameObject.SetActive(false);
+        confirmCapPanel.SetActive(true);
+        Texture2D texture = new Texture2D(width, height);
+        texture.LoadImage(Screenshot);
     }
 
 
