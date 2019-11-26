@@ -7,6 +7,8 @@ public class CameraController : MonoBehaviour
 {
     public Image cameraDisplayImage, confirmCaptureImage;
     public GameObject confirmCapPanel;
+    int width = Screen.width;
+    int height = Screen.height;
     private byte[] _screenshot;
 
 
@@ -35,7 +37,7 @@ public class CameraController : MonoBehaviour
 
     public void TurnOnCamera()
     {
-        WebCamTexture webCamTexture = new WebCamTexture();
+        WebCamTexture webCamTexture = new WebCamTexture(width, height);
 
         cameraDisplayImage.gameObject.SetActive(true);
         cameraDisplayImage.material.mainTexture = webCamTexture;
@@ -55,8 +57,6 @@ public class CameraController : MonoBehaviour
         CaptureScreenshot();
 
         confirmCapPanel.SetActive(true);
-        int width = Screen.width;
-        int height = Screen.height;
         Texture2D texture = new Texture2D(width, height);
         texture.LoadImage(Screenshot);
     }
@@ -64,9 +64,6 @@ public class CameraController : MonoBehaviour
     private void CaptureScreenshot()
     {
         byte[] imageArray;
-
-        int width = Screen.width;
-        int height = Screen.height;
         Texture2D tex = new Texture2D(width, height, TextureFormat.RGB24, false);
         tex.ReadPixels(new Rect(0, 0, width, height), 0, 0);
         tex.Apply();
