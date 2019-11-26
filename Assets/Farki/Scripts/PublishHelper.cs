@@ -1,4 +1,5 @@
 ﻿using CymaticLabs.Unity3D.Amqp;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -10,6 +11,7 @@ public class PublishHelper : MonoBehaviour
     [SerializeField] private string _exchangeName, _routingKey;
     public AmqpExchangeTypes ExchangeType = AmqpExchangeTypes.Direct;
 
+    [SerializeField] private CameraController _cameraController;
     public RawImage userImage;
 
     private User _user;
@@ -20,46 +22,53 @@ public class PublishHelper : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        var subscription = new AmqpExchangeSubscription(_exchangeName, ExchangeType, _routingKey, HandleExchangeMessageReceived);
+        AmqpClient.Subscribe(subscription);
+
         _user = new User();
+        if (_cameraController == null)
+            _cameraController = FindObjectOfType<CameraController>();
+    }
+
+    private void HandleExchangeMessageReceived(AmqpExchangeReceivedMessage received)
+    {
+        var receivedJson = System.Text.Encoding.UTF8.GetString(received.Message.Body);
+        DeserializeUser(receivedJson);
     }
 
     // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown("p"))
-            SerializeUser();
+            Publish();
 
         if (Input.GetKeyDown("r"))
             DeserializeUser(_jsonString);
     }
 
-    private byte[] GetImage()
-    {
-        byte[] imageArray;
+    //private byte[] GetImage()
+    //{
+    //    byte[] imageArray;
 
-        int width = Screen.width;
-        int height = Screen.height;
-        Texture2D tex = new Texture2D(width, height, TextureFormat.RGB24, false);
-        tex.ReadPixels(new Rect(0, 0, width, height), 0, 0);
-        tex.Apply();
+    //    int width = Screen.width;
+    //    int height = Screen.height;
+    //    Texture2D tex = new Texture2D(width, height, TextureFormat.RGB24, false);
+    //    tex.ReadPixels(new Rect(0, 0, width, height), 0, 0);
+    //    tex.Apply();
 
-        imageArray = tex.EncodeToPNG();
+    //    imageArray = tex.EncodeToPNG();
 
 
-        Destroy(tex);
-        return imageArray;
-    }
+    //    Destroy(tex);
+    //    return imageArray;
+    //}
 
     public void DeserializeUser(string json)
     {
         int width = Screen.width;
         int height = Screen.height;
 
-        using (StreamReader reader = new StreamReader(Application.dataPath + "/TestJson.json"))
-        {
-            string j = reader.ReadToEnd();
-            _user = JsonUtility.FromJson<User>(j);
-        }
+        _user = JsonUtility.FromJson<User>(json);
 
         Texture2D texture = new Texture2D(width, height);
         texture.LoadImage(_user.image);
@@ -69,7 +78,7 @@ public class PublishHelper : MonoBehaviour
 
     public void SerializeUser()
     {
-        User user = new User
+        _user = new User
         {
             id = "Test",
             coordinates = new Coordinates
@@ -77,26 +86,24 @@ public class PublishHelper : MonoBehaviour
                 latitude = 12.090,
                 longitude = 55.665
             },
-            image = GetImage()
+            image = _cameraController.Screenshot
         };
 
-        File.WriteAllBytes(Application.dataPath + "/TestImage", GetImage());
+        //File.WriteAllBytes(Application.dataPath + "/TestImage", GetImage());
 
         using (StreamWriter stream = new StreamWriter(Application.dataPath + "/TestJson.json"))
         {
-            string json = JsonUtility.ToJson(user, true);
+            string json = JsonUtility.ToJson(_user, true);
             _jsonString = json;
             stream.Write(json);
         }
-
-        Debug.Log("PATH : " + Application.dataPath);
     }
 
 
     public void Publish()
     {
-        string str = "\"id\":\"cube1\", \"posx\":2, \"posY\":0.5f, \"posZ\"-0.2f";
-        var message = str;
-        AmqpClient.Publish(_exchangeName, _routingKey, message);
+        var msg = JsonUtility.ToJson(_user);
+
+        AmqpClient.Publish(_exchangeName, _routingKey, msg);
     }
 }
