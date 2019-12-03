@@ -260,69 +260,101 @@ MonoBehaviour:
   WriteToConsole: 1
   ExchangeSubscriptions: []
   QueueSubscriptions:
-  - Name: Test
+  - Name: 
     Enabled: 0
-    QueueName: Unity_Publish_Queue
+    QueueName: 
     UseAck: 0
     OnMessageReceived:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 538259155}
-          m_MethodName: QueueMessage
-          m_Mode: 0
+        - m_Target: {fileID: 0}
+          m_MethodName: 
+          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_ObjectArgumentAssemblyTypeName: 
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+      m_TypeName: CymaticLabs.Unity3D.Amqp.AmqpQueueMessageReceivedUnityEvent, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   OnConnected:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: CymaticLabs.Unity3D.Amqp.AmqpClientUnityEvent, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   OnDisconnecting:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: CymaticLabs.Unity3D.Amqp.AmqpClientUnityEvent, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   OnDisconnected:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: CymaticLabs.Unity3D.Amqp.AmqpClientUnityEvent, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   OnBlocked:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: CymaticLabs.Unity3D.Amqp.AmqpClientUnityEvent, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   OnReconnecting:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: CymaticLabs.Unity3D.Amqp.AmqpClientUnityEvent, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   OnConnectionAborted:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: CymaticLabs.Unity3D.Amqp.AmqpClientUnityEvent, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   OnConnectionError:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: CymaticLabs.Unity3D.Amqp.ExceptionUnityEvent, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   OnSubscribedToExchange:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: CymaticLabs.Unity3D.Amqp.AmqpExchangeSubscriptionUnityEvent, Assembly-CSharp,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   OnUnsubscribedFromExchange:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: CymaticLabs.Unity3D.Amqp.AmqpExchangeSubscriptionUnityEvent, Assembly-CSharp,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   OnSubscribedToQueue:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: CymaticLabs.Unity3D.Amqp.AmqpQueueSubscriptionUnityEvent, Assembly-CSharp,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   OnUnsubscribedFromQueue:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: CymaticLabs.Unity3D.Amqp.AmqpQueueSubscriptionUnityEvent, Assembly-CSharp,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   OnExchangeSubscribeError:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: CymaticLabs.Unity3D.Amqp.ExceptionUnityEvent, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   OnExchangeUnsubscribeError:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: CymaticLabs.Unity3D.Amqp.ExceptionUnityEvent, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   OnQueueSubscribeError:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: CymaticLabs.Unity3D.Amqp.ExceptionUnityEvent, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   OnQueueUnsubscribeError:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: CymaticLabs.Unity3D.Amqp.ExceptionUnityEvent, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &519968483
 GameObject:
   m_ObjectHideFlags: 0
@@ -444,6 +476,7 @@ GameObject:
   - component: {fileID: 538259149}
   - component: {fileID: 538259154}
   - component: {fileID: 538259155}
+  - component: {fileID: 538259156}
   m_Layer: 5
   m_Name: UI
   m_TagString: Untagged
@@ -574,12 +607,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e13a1fc8f18de44e9ad75525fef5421, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _exchangeName: publish_test
+  _exchangeName: test_exchange
   _routingKey: Test
   ExchangeType: 2
   QueueSubscriptions: []
   _cameraController: {fileID: 538259149}
   userImage: {fileID: 2047774944}
+--- !u!114 &538259156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 538259148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eacda2b0ec3e38d4fb1147591f68db39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &568276212
 GameObject:
   m_ObjectHideFlags: 0
@@ -638,6 +683,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 1
   m_PreserveAspect: 0
@@ -711,6 +758,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: Click the button to capture photo
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: eae0355a9a7a16f40b09754559224b11, type: 2}
@@ -904,6 +953,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!114 &656427880
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -922,6 +973,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: bc0f6ca7306846a40bd872892d8f3e7f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -1161,6 +1214,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!114 &703936998
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1179,6 +1234,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 1
   m_PreserveAspect: 0
@@ -1252,6 +1309,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: Load Location
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: eae0355a9a7a16f40b09754559224b11, type: 2}
@@ -1445,6 +1504,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!114 &906998302
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1463,6 +1524,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 0
   m_PreserveAspect: 0
@@ -1688,6 +1751,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: Park-Away
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: eae0355a9a7a16f40b09754559224b11, type: 2}
@@ -1844,6 +1909,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: Are you satisfied?
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: eae0355a9a7a16f40b09754559224b11, type: 2}
@@ -2000,6 +2067,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
@@ -2206,6 +2275,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!114 &1490568780
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2224,6 +2295,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 1
   m_PreserveAspect: 0
@@ -2607,6 +2680,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Texture: {fileID: 0}
   m_UVRect:
     serializedVersion: 2
@@ -2698,6 +2773,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: Save Location
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: eae0355a9a7a16f40b09754559224b11, type: 2}
@@ -2858,6 +2935,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 1
   m_PreserveAspect: 0
@@ -2912,6 +2991,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Texture: {fileID: 2800000, guid: c85a8de134d1c2040a26736c10fe45b6, type: 3}
   m_UVRect:
     serializedVersion: 2
@@ -3001,6 +3082,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Texture: {fileID: 0}
   m_UVRect:
     serializedVersion: 2
@@ -3108,6 +3191,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!114 &2106158377
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3126,6 +3211,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 8238144024d4b5b48b1c457a3d45f43e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0

@@ -91,7 +91,7 @@ public class PublishHelper : MonoBehaviour
         User user = new User();
         user = JsonUtility.FromJson<User>(json);
 
-        Debug.Log(user.id);
+        Debug.Log("Message from Queue: " + user.id);
         Debug.Log(user.coordinates.latitude);
 
         //Texture2D texture = new Texture2D(width, height);
@@ -104,7 +104,8 @@ public class PublishHelper : MonoBehaviour
     {
         User user = new User
         {
-            id = Guid.NewGuid().ToString(),
+            type = "park",
+            id = "5ddfb4cf8cd0ad2750f50c13",
             coordinates = new Coordinates
             {
                 latitude = _locationHandler.Latitude,
@@ -132,7 +133,7 @@ public class PublishHelper : MonoBehaviour
         
         string inHuman = System.Text.Encoding.UTF8.GetString(msg.Body, 0, msg.Body.Length);
         DeserializeUser(inHuman);
-        
+
         Debug.Log(msg.Properties.CorrelationId);
     }
 
@@ -147,7 +148,9 @@ public class PublishHelper : MonoBehaviour
     {
         var msg = JsonUtility.ToJson(user);
 
-        string g = Guid.NewGuid().ToString();
+        //  string g = Guid.NewGuid().ToString();
+
+        Debug.Log("PROPERTIES: " + GetProperties().CorrelationId);
 
         AmqpClient.Publish(_exchangeName, _routingKey, msg);
     }
